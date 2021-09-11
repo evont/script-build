@@ -1,0 +1,27 @@
+{
+  "name": "@cafune/script-build",
+  "version": "1.0.0",
+  "description": "build script that convert ts/js file to es & commonjs module",
+  "main": "index.js",
+  "bin": {
+    "cafune-build": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evont/script-build.git"
+  },
+  "author": "EvontNg <evontgoh@foxmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evont/script-build/issues"
+  },
+  "homepage": "https://github.com/evont/script-build#readme",
+  "dependencies": {
+    "@babel/core": "^7.15.5",
+    "commander": "^8.2.0",
+    "fs-extra": "^10.0.0"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.15.0"
+  }
+}
