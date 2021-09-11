@@ -18,7 +18,6 @@ program
     "lib path to output compiled commonjs module file",
     "./lib"
   );
-
 program.parse();
 
 function getAbsolutePath(dir) {
@@ -28,17 +27,14 @@ function checkConfigExist(configFile) {
   return fs.pathExistsSync(configFile);
 }
 
-const scriptRegExp = /\.(js|jsx|ts|tsx)$/;
+const scriptRegExp = /(?<!\.d)\.(ts|tsx)$/;
 const isDir = (dir) => fs.lstatSync(dir).isDirectory();
-const isCode = (file) => !/(test)$/.test(file);
 const isScript = (file) => scriptRegExp.test(file);
 function compile(dir, babelConfig) {
   const files = fs.readdirSync(dir);
-  files.forEach((file) => {
+  
+  files.forEach(async (file) => {
     const filePath = path.join(dir, file);
-    if (!isCode(file)) {
-      return fs.removeSync(filePath);
-    }
 
     if (isDir(filePath)) {
       return compile(filePath);
@@ -76,5 +72,3 @@ function exec({ config, src, es, lib }) {
 }
 
 exec(program.opts());
-
-// const srcDir = path.resolve(cwd, "./src");
