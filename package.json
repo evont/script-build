@@ -1,6 +1,6 @@
 {
   "name": "@cafune/script-build",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "build script that convert ts/js file to es & commonjs module",
   "main": "index.js",
   "bin": {

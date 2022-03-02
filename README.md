@@ -1,5 +1,7 @@
 #Script build
 
+## intro
+build script that convert ts/js file to es & commonjs module
 ## Usage
 
 add  `cafune-build [options]` script to `package.json`
